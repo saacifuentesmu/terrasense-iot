@@ -11,27 +11,22 @@ last-reviewed: 2026-06-12
 
 ## 1. Overview
 
-TerraSense IoT automates what is today a manual logging task in mushroom growing
-rooms. Battery- or mains-powered sensor nodes measure temperature, humidity, and
-(on at least one node) CO₂, report over a **Thread mesh** to a **border router**, which
-hands telemetry to an **uplink bridge** that writes to **Firestore**. The existing
-**TerraSense app** subscribes and shows live per-room readings, with manual entry
-retained as fallback.
+TerraSense IoT automates what is today a manual logging task in mushroom growing rooms. Battery- or mains-powered sensor nodes measure temperature, humidity, and (on at least one node) CO₂, report over a **Thread mesh** to a **border router**, which hands telemetry to an **uplink bridge** that writes to **Firestore**. The existing **TerraSense app** subscribes and shows live per-room readings, with manual entry retained as fallback.
 
 ## 2. Block diagram
 
 ```
- ┌──────────────┐   Thread    ┌──────────────────┐   IP/Wi-Fi   ┌──────────────┐
- │ Sensor node  │  802.15.4   │  Border Router   │              │   Firestore  │
- │ nRF52840     │ ───────────▶│  Raspberry Pi    │ ────────────▶│  (cloud DB)  │
- │ SHT4x (+SCD41)│  CoAP/UDP  │  + nRF dongle RCP │   bridge     │              │
- │ Zephyr / NCS │            │  ot-br-posix      │ writes via   └──────┬───────┘
- └──────────────┘            │  + CoAP→FS bridge │ service acct        │ realtime
-        ▲  ▲                 └──────────────────┘                      ▼
-        │  └── mesh routing                                     ┌──────────────┐
- ┌──────────────┐                                               │ TerraSense   │
- │ Sensor node  │  (multi-hop to extend range across building)  │ app (Flutter)│
- └──────────────┘                                               └──────────────┘
+ ┌───────────────┐   Thread    ┌──────────────────┐   IP/Wi-Fi   ┌──────────────┐
+ │ Sensor node   │  802.15.4   │  Border Router   │              │   Firestore  │
+ │ nRF52840      │ ───────────▶│  Raspberry Pi    │ ────────────▶│  (cloud DB)  │
+ │ SHT4x (+SCD41)│  CoAP/UDP   │  + nRF dongle RCP│   bridge     │              │
+ │ Zephyr / NCS  │             │  ot-br-posix     │ writes via   └──────┬───────┘
+ └───────────────┘             │  + CoAP→FS bridge│ service acct        │ realtime
+        ▲  ▲                   └──────────────────┘                     ▼
+        │  └── mesh routing                                      ┌──────────────┐
+ ┌──────────────┐                                                │ TerraSense   │
+ │ Sensor node  │  (multi-hop to extend range across building)   │ app (Flutter)│
+ └──────────────┘                                                └──────────────┘
 ```
 
 ## 3. Component choices

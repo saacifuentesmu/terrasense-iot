@@ -22,12 +22,14 @@ see [ADR-0002](docs/decisions/0002-repo-topology.md) for why they are split.
 
 | Dir | Contents |
 |-----|----------|
-| `docs/` | RTM, architecture, data contract, test plan, decision records |
+| `docs/` | RTM (PoC + system), architecture, data contract, test plan, decision records |
 | `firmware/` | Sensor node firmware (nRF Connect SDK / Zephyr) |
 | `gateway/` | Border-router config + CoAP→Firestore uplink bridge |
 | `hardware/` | Schematics, BOM, board files (dev kits now, custom boards later) |
 
 ## Status
 
-**Phase 0 — scoping.** Start at [docs/RTM.md](docs/RTM.md), then
-[docs/architecture.md](docs/architecture.md). Phase plan lives in the architecture doc.
+**Phase 0 — scoping.** Two RTMs: [docs/RTM-poc.md](docs/RTM-poc.md) is the de-risking +
+recruiter-demo scope; [docs/RTM-system.md](docs/RTM-system.md) is the production target.
+Passing the PoC baselines the system RTM. Then see
+[docs/architecture.md](docs/architecture.md) for the phase plan.

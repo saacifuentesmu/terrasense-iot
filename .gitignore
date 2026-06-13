@@ -1,0 +1,27 @@
+# Zephyr / NCS
+build/
+twister-out*/
+*.hex
+*.bin
+*.elf
+
+# Python (gateway bridge)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Secrets
+.env
+*service-account*.json
+*credentials*.json
+
+# Hardware CAD backups
+*.kicad_*-bak
+fp-info-cache
+*-backups/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

@@ -25,7 +25,7 @@ No hardware, no firmware — a fake writer stands in for the node→bridge path.
 The data contract assumes `igloos/{node}` keyed by `node = "iglu_1"` (`deviceId`), but the app
 today keys that collection by **display name**: `FirebaseDataStore` calls
 `.collection('igloos').doc(deviceName)` where `deviceName = "Iglú 1"`
-([firebase_data_store.dart](../../terrasense-sample/lib/core/backend/adapters/firebase_data_store.dart),
+(`lib/core/backend/adapters/firebase_data_store.dart` in the app repo,
 `AppConstants.deviceName(i)`). So `iglu_1` and `Iglú 1` are different documents.
 
 Pick one before writing anything:

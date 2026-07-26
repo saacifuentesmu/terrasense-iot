@@ -14,7 +14,7 @@ last-reviewed: 2026-06-12
 > **Can a Thread sensor node deliver a live reading into the TerraSense app, end to end
 > (node → border router → Firestore → app)?**
 
-This is the de-risking + recruiter-demo scope — prove the integration path works, not the
+This is the de-risking + demonstration scope — prove the integration path works, not the
 production targets. The full production requirements live in
 [RTM-system.md](RTM-system.md); each PoC row links to the system requirement it previews.
 
@@ -37,7 +37,7 @@ plus a recorded video and a PoC summary.** Everything else is deferred (see
 | POC-07 | Only the bridge holds cloud write credentials; the node holds none | S | I | GW-05, SEC-02 | Open |
 | POC-08 | App shows the node's latest T/RH as a live room tile, updating within ~10 s | M | D | APP-01 | Open |
 | POC-09 | App flags stale data if the node stops reporting | S | D | APP-02 | Open |
-| POC-10 | A recorded demo video captures the end-to-end path (interview-safe backup) | M | I | — | Open |
+| POC-10 | A recorded demo video captures the end-to-end path (backup for live demonstrations) | M | I | — | Open |
 | POC-11 | A 1–2 page PoC Summary is produced (objective, setup, observations, risks, next steps) | M | I | service catalog `PoC1D` | Open |
 
 ## Deferred to the system RTM

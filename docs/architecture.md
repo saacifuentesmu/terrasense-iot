@@ -47,7 +47,7 @@ TerraSense IoT automates what is today a manual logging task in mushroom growing
 Nodes never talk to the cloud directly. They POST a small CoAP payload to the bridge;
 the bridge maps it to the Firestore schema in [data-contract.md](data-contract.md) and
 writes with the only cloud credentials in the system (GW-05). That payload format is the
-**contract**: any gateway that produces it — including the coworkers' gateway product —
+**contract**: any gateway that produces it — including the partner gateway product —
 can replace the reference Pi bridge without touching firmware or app (GW-04). This is the
 same ports-and-adapters discipline the app already uses for its backend.
 

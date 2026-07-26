@@ -16,8 +16,8 @@ Nodes need an 802.15.4 **Thread** radio, low power for battery operation, and id
 **BLE** for local commissioning/config.
 
 ## Options
-- **nRF52840 (chosen)** — Thread + BLE + low-power; mature OpenThread in NCS; reuses our
-  existing BOMI NCS/Zephyr toolchain and experience.
+- **nRF52840 (chosen)** — Thread + BLE + low-power; mature OpenThread in NCS; reuses the team's
+  existing NCS/Zephyr toolchain and experience.
 - **ESP32 (classic)** — *cannot* do Thread (no 802.15.4 radio). Rejected.
 - **ESP32-C6 / H2** — can do Thread, but the stack is newer/less proven and we'd learn
   ESP-IDF Thread from scratch. Kept in mind only for the partner **gateway** (its Wi-Fi
